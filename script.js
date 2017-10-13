@@ -13,6 +13,18 @@ function syllables(str){
     return result;
 }
 
+//UNFINISHED
+function chooseSet(substr){
+    const last = substr[substr.length - 1];
+
+    switch (last) {
+        case 'b':
+            break;
+        default:
+            break;
+    }
+}
+
 /*
 // Logs all syllables correctly
 
