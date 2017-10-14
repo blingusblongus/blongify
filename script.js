@@ -1,3 +1,14 @@
+//jquery
+
+$("#blongify").click(function(){
+
+    let first = $("#first").val();
+    let last = $("#last").val();
+
+    $('.result').html(control(first) + " " + control(last));
+
+});
+
 //sets
 // Currently, comp is technically compSet + nonCompSet
 /*
@@ -9,6 +20,7 @@ other: q //own thing
 const compSet = ['ling', 'long'],
       semiCompSet = ['ring', 'rong', 'roing', 'rang', 'ram', 'rom', 'roim'],
       nonCompSet = ['om', 'oim', 'im', 'am', 'ing', 'oing', 'ong', 'ang'],
+      qSet = ['uom', 'uoim', 'uim', 'uam', 'uing', 'uoing', 'uong', 'uang'],
       second_global = ['bop', 'blip', 'bip', 'dong'],
       second_ing = ['us'], //weight this one heavier
       second_not_ing = ['bus'];
@@ -21,13 +33,26 @@ function control(name){
 
     //for each syllable, add a piece (arrow function?)
     syl.map(el => {
-        console.log(el);
         let set = chooseSet(el);
         let rand = Math.floor(Math.random()*set.length);
 
         result.push(el);
         result.push(set[rand]);
     });
+
+    result = addEnding(result);
+
+    console.log(result)
+
+    return result;
+}
+
+function addEnding(result){
+    const last = result[result.length - 1];
+    let sets = mergeArrays([second_global,second_ing,second_not_ing]);
+    let rand = Math.floor(Math.random()*sets.length);
+
+    result.push(sets[rand]);
 
     return result.join('');
 }
@@ -39,6 +64,9 @@ function syllables(str){
     let cur, last = 0, match, result=[];
 
     while((match = vowels.exec(str)) != null){
+        //Continue if vowel starts the name
+        if(match.index == 0) continue;
+
         cur = match.index;
         result.push(str.slice(last, cur));
         last = cur + 1;
@@ -47,14 +75,13 @@ function syllables(str){
     return result;
 }
 
-//UNFINISHED
 function chooseSet(substr){
     const last = substr[substr.length - 1];
 
     // Regex
-    const compRe = /[bcfgkp]/,
-          semiCompRe = /[dtw]/,
-          nonCompRe = /[hjlmnrsvxyz]/;
+    const compRe = /[bcfgkpBCKFGKP]/,
+          semiCompRe = /[dtwDTW]/,
+          nonCompRe = /[hjlmnrsvxyzHJLMNRSVXYZ]/;
 
     if(compRe.exec(last)){
         return mergeArrays([compSet, semiCompSet, nonCompSet]);
@@ -64,6 +91,9 @@ function chooseSet(substr){
         return nonCompSet;
     }else if(last=='q'){
         //Special set - add u, then nonCompSet
+    }else{
+        console.log('error in chooseset');
+        return ;
     }
 }
 
@@ -72,16 +102,3 @@ function mergeArrays(arrays){
     return [].concat.apply([], arrays);
 }
 
-/*
-// Logs all syllables correctly
-
-function syllables(str){
-    const vowels = /[aeiou]/g;
-    let cur, last, match;
-
-    while((match = vowels.exec(str)) != null){
-        console.log(match);
-    }
-}
-
-*/
