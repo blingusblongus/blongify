@@ -1,3 +1,9 @@
+//sets
+const bcdfSet = ['ring', 'ling', 'rong', 'long', 'roing', 'rang', 'ram', 'rom', 'roim', 'om', 'oim', 'im'],
+      second_global = ['bop', 'blip', 'bip', 'dong'],
+      second_ing = ['us'],
+      second_not_ing = ['bus'];
+
 function syllables(str){
     //returns array of
 
@@ -17,12 +23,16 @@ function syllables(str){
 function chooseSet(substr){
     const last = substr[substr.length - 1];
 
-    switch (last) {
-        case 'b':
-            break;
-        default:
-            break;
+    if(/bcdf/.match(last)){
+        //addl. code goes here (mergeArrays)
+    }else if{
+        //blah blah blah
     }
+}
+
+//Combines sets
+function mergeArrays(arrays){
+    return [].concat.apply([], arrays);
 }
 
 /*
