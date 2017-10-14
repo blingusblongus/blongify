@@ -1,0 +1,21 @@
+body{
+    text-align: center;
+}
+
+.input {
+    margin-bottom: 1rem;
+}
+
+input {
+    border: .1rem solid black;
+    border-radius: .1rem;
+}
+
+#blongify {
+    background-color: lightblue;
+    width: 5rem;
+    margin: auto;
+    padding: .2rem;
+    border: .2rem solid black;
+    border-radius: .3rem;
+}
