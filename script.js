@@ -27,6 +27,10 @@ const compSet = ['ling', 'long'],
 
 function control(name){
     //app exec code here
+
+    //Check if blank
+    if(!name) return "";
+
     //get syllables
     const syl = syllables(name);
     let result = [];
@@ -60,7 +64,7 @@ function addEnding(result){
 function syllables(str){
     //returns array of syllables without linking consonants
 
-    const vowels = /[aeiou]/g;
+    const vowels = /[aeiouAEIOU]/g;
     let cur, last = 0, match, result=[];
 
     while((match = vowels.exec(str)) != null){
@@ -89,8 +93,8 @@ function chooseSet(substr){
         return mergeArrays([semiCompSet, nonCompSet]);
     }else if(nonCompRe.exec(last)){
         return nonCompSet;
-    }else if(last=='q'){
-        //Special set - add u, then nonCompSet
+    }else if(/[qQ]/.exec(last)){
+        return qSet;
     }else{
         console.log('error in chooseset');
         return ;
