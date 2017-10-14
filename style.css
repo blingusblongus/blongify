@@ -21,12 +21,12 @@ input {
 
 #blongify {
     background-color: lightblue;
-    width: 20%;
     margin: auto;
-    padding: .2rem;
+    padding: 1rem;
     border: .2rem solid black;
     border-radius: .3rem;
-    font-size: 3rem
+    font-size: 3rem;
+    display: inline-block;
 }
 
 .result {
