@@ -1,6 +1,12 @@
 body{
     text-align: center;
-    background-color: lightpink
+    background: -webkit-gradient(linear, right top, left top, from(lightpink), to(lightblue));
+    background: linear-gradient(to left, lightpink, lightblue);
+}
+
+.title {
+    font-size: 5rem;
+    margin-top: 30%;
 }
 
 h1 {
@@ -16,7 +22,7 @@ input {
     border: .1rem solid black;
     border-radius: .1rem;
     font-size: 2rem;
-    background-color: palegreen
+    background-color: palegoldenrod;
 }
 
 #blongify {
@@ -41,4 +47,12 @@ input {
   color:transparent;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.pig {
+    position: absolute;
+    left: 0px;
+    top: 10%;
+    z-index: -1;
+    opacity: .2;
 }

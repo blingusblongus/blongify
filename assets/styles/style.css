@@ -1,0 +1,57 @@
+body{
+    text-align: center;
+    background: linear-gradient(to left, lightpink, lightblue);
+}
+
+.title {
+    font-size: 5rem;
+    margin-top: 30%;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+.input {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+input {
+    border: .1rem solid black;
+    border-radius: .1rem;
+    font-size: 2rem;
+    background-color: palegoldenrod;
+}
+
+#blongify {
+    background-color: lightblue;
+    margin: auto;
+    padding: 1rem;
+    border: .2rem solid black;
+    border-radius: .3rem;
+    font-size: 3rem;
+    display: inline-block;
+}
+
+.result {
+    font-size: 5rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.pig {
+    position: absolute;
+    left: 0px;
+    top: 10%;
+    z-index: -1;
+    opacity: .2;
+}

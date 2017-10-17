@@ -1,13 +1,4 @@
-//jquery
 
-$("#blongify").click(function(){
-
-    let first = $("#first").val();
-    let last = $("#last").val();
-
-    $('.result').html(control(first) + " " + control(last));
-
-});
 
 //sets
 // Currently, comp is technically compSet + nonCompSet
@@ -45,8 +36,6 @@ function control(name){
     });
 
     result = addEnding(result);
-
-    console.log(result)
 
     return result;
 }
