@@ -18,13 +18,15 @@ function blongify(){
     let last = $("#last").val();
 
     $('.result').animate({
-        fontSize: '0rem'
-    }, 500, function(){
-        $('.result').html(control(first) + " " + control(last));
-    });
+        fontSize: '0px'
+    }, {
+        duration: 500,
+        complete: function() {
 
-    $('.result').animate({
-        fontSize: '5rem'
-    }, 1000);
+            $('.result').html(control(first) + "<br>" + control(last));
+            $('.result').animate({fontSize: '5rem'}, 1000);
+            }
+
+        });
 
 }
